@@ -7,9 +7,24 @@
 </head>
 <body>
     <h1>Video Player</h1>
-    <video controls width="1200">
+    <video controls width="600">
         <source src="https://twp1947.github.io/clubhouse/clubhouse2.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    <button onclick="goFullScreen()">Go Full Screen</button>
+
+    <script>
+        function goFullScreen() {
+            const videoElement = document.getElementById('videoPlayer');
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+            } else if (videoElement.webkitRequestFullscreen) { // For Safari
+                videoElement.webkitRequestFullscreen();
+            } else if (videoElement.msRequestFullscreen) { // For Internet Explorer
+                videoElement.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
 </body>
 </html>
